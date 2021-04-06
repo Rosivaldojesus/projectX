@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+{% block title %} Clientes {% endblock%}
+
+{% block main %}
+<div class="container">
+    <div><br><br>
+        <h3>
+          CLIENTES
+        </h3>
+        <p>
+          A razão da existência de nossa atividade. Nosso mind set é de nos 
+          colocarmos na posição do cliente, entendendo necessidades e grau 
+          de urgência das demanda, bem como o ser o apoio técnico nas 
+          demandas necessárias e tomadas de decisão.
+        </p>
+    </div><br>
+
+
+    </div>
+        <a href="/clientes/criar" class="btn btn-primary">Adicionar Cliente</a>
+    <div>
+
+
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Cliente</th>
+              <th scope="col">Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cliente in object_list %}
+            <tr>
+              <th scope="row">{{ cliente}}</th>
+         
+              <td>
+                <a href="{% url 'details_cliente' cliente.id%}" class="btn btn-info">View</a>
+                <a href="{% url 'update_cliente' cliente.id %}" class="btn btn-primary">Editar</a>
+                <a href="{% url 'delete_cliente' cliente.id %}" class="btn btn-danger">Deletar</a>
+                  
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>        
+</div>
+{% endblock %}

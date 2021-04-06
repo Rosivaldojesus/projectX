@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Forum{% endblock%}
+
+{% block main %}
+<div class="container-xl">
+    <div align="right"><br>
+        <a href="/forum/criar" class="btn btn-primary">Faça uma pergunta</a>
+    </div>
+
+
+    <div><br>
+        {% for forum in object_list %}
+            <div class="card">
+
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>{{ forum.pergunta_forum }}</p>
+                </blockquote>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
