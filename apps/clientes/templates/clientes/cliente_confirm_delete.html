@@ -4,9 +4,17 @@
 
     {% block main %}
         <form method="post">{% csrf_token %}
-            <h1>Você tem certeza que quer deletar. </h1>
-            {{ form  }}
+             <div align="center">
 
-            <button type="submit" class="btn btn-danger"> Comfirmar</button>
+                 <i class="fas fa-exclamation-triangle" style="color:#dd3447;font-size:60px;"></i>
+
+                <h2>Deseja excluir cadastro permanentemente?</h2>
+            </div>
+
+                {{ form  }}
+
+            <div align="center">
+                <button type="submit" class="btn btn-danger"> Comfirmar</button>
+            </div>
         </form>
     {% endblock %}

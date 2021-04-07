@@ -25,21 +25,27 @@
 
 
     <div class="table-responsive">
-        <table class="table">
-          <thead>
+        <table class="table table-hover">
+
+          <thead class="table-dark">
             <tr>
               <th scope="col">Cliente</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">UF</th>
               <th scope="col">Opções</th>
             </tr>
           </thead>
           <tbody>
             {% for cliente in object_list %}
             <tr>
-              <th scope="row">{{ cliente}}</th>
+              <th scope="row">{{ cliente }}</th>
+                <th scope="row">{{ cliente.cidade }}</th>
+                <th scope="row">{{ cliente.cidade.uf }}</th>
          
               <td>
                 <a href="{% url 'details_cliente' cliente.id%}" class="btn btn-info">View</a>
-                <a href="{% url 'update_cliente' cliente.id %}" class="btn btn-primary">Editar</a>
+                <a href="{% url 'details_cliente' cliente.id%}" class="btn btn-secondary">Equipamentos</a>
+                <a href="{% url 'update_cliente' cliente.id %}" class="btn btn-warning">Editar</a>
                 <a href="{% url 'delete_cliente' cliente.id %}" class="btn btn-danger">Deletar</a>
                   
               </td>

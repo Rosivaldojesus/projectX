@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Documentação {% endblock%}
+
+{% block main %}
+<div class="container">
+    <div>
+      <br>
+        <section>
+            <div class="card mb-3 border-0" style="max-width: 100%;" >
+              <div class="row g-0">
+                <div class="col-md-9">
+                              <!--
+                    -----------------------------------------------------------
+                    Título da página
+                    -----------------------------------------------------------
+                  -->
+                    <h2>Documentação dos Sistemas</h2>
+                    <p>Tudo o que você precisa saber sobre Sistemas de Automação Predial.</p>
+                    <hr>
+                    <hr>
+                  <!--
+                      -----------------------------------------------------------
+                      CFTV - Circuito Fechado de TV
+                      -----------------------------------------------------------
+                  -->
+                    <h4>CFTV - Circuito Fechado de TV</h4>
+                    {% for cftv in cftv %}
+                            <h6>{{ cftv.tituloDocumentacao }}</h6>
+                            <p>{{ cftv.textoDocumentacao }}</p>
+                        {% endfor %}
+                    <hr>
+                    <hr>
+                  <!--
+                      -----------------------------------------------------------
+                      Sistema de Alarme de Intrusão
+                      -----------------------------------------------------------
+                  -->
+                    <h4>Sistema de Alarme de Intrusão</h4>
+                    {% for sai in sai %}
+                            <h6>{{ sai.tituloDocumentacao }}</h6>
+                            <p>{{ sai.textoDocumentacao }}</p>
+                        {% endfor %}
+
+                    <hr>
+                    <hr>
+                  <!--
+                      -----------------------------------------------------------
+                      Sistema de Automação
+                      -----------------------------------------------------------
+                  -->
+                    <h4>Sistema de Automação</h4>
+                    <br>
+                    {% for sap in sap %}
+                            <h6>{{ sap.tituloDocumentacao }}</h6>
+                            <p>{{ sap.textoDocumentacao }}</p>
+                        {% endfor %}
+
+                    <hr>
+                    <hr>
+                  <!--
+                      -----------------------------------------------------------
+                      Sistema de Controle de Acesso
+                      -----------------------------------------------------------
+                  -->
+                    <h4>Sistema de Controle de Acesso</h4>
+                    {% for sca in sca %}
+                            <H66>{{ sca.tituloDocumentacao }}</H66>
+                            <p>{{ sca.textoDocumentacao }}</p>
+                        {% endfor %}
+
+                    <hr>
+                    <hr>
+                  <!--
+                      -----------------------------------------------------------
+                      Sistema de Alarme de Incêndio
+                      -----------------------------------------------------------
+                  -->
+                    <h4>Sistema de Alarme de Incêndio</h4>
+                        {% for sdai in sdai %}
+                            <h6>{{ sdai.tituloDocumentacao }}</h6>
+                            <p>{{ sdai.textoDocumentacao }}</p>
+                        {% endfor %}
+                    <hr>
+                    <hr>
+                </div>
+                <div class="col-md-3 bg-light text-dark">
+                  <div class="card-body ">
+                    <h5 class="card-title">Suporte ADS-Sistemas</h5><hr>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+</div>
+{% endblock %}

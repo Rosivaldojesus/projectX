@@ -11,12 +11,13 @@
 
 
     <div><br>
-        {% for forum in object_list %}
+        {% for pergunta in pergunta %}
             <div class="card">
-
               <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                  <p>{{ forum.pergunta_forum }}</p>
+                  <a href="teste/?id={{ pergunta.id }}">{{ pergunta }}</a>
+                    <br>
+                  <a>Resposta: {{ respostasPerguntas }} </a>
                 </blockquote>
               </div>
             </div>

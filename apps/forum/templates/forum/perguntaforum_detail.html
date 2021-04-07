@@ -1,0 +1,24 @@
+{% extends 'base.html '%}
+{% load static %}
+
+{% block main %}
+
+    <br>
+    <h4>{{ pergunta.titulo_pergunta  }} </h4>
+    <hr>
+    <h6>{{ pergunta.pergunta_forum }} </h6>
+
+    <br><strong><h5>{{ respostasPerguntas }} Respostas</h5></strong> <br>
+
+        {% for resposta in resposta %}
+            {{ resposta }}
+            <hr><hr>
+            <br>
+
+
+
+        {% endfor %}
+
+
+
+{% endblock %}

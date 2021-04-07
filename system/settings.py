@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'apps.clientes',
     'apps.core',
     'apps.forum',
+    'apps.documentacao',
 
 ]
 

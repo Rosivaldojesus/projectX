@@ -1,0 +1,18 @@
+{% extends 'base.html '%}
+{% load static %}
+
+{% block main %}
+    <h3>{{ object.titulo_pergunta }}</h3>
+    <h5>{{ object.pergunta_forum }}</h5>
+    <hr>
+    <h4>Respostas - : </h4>
+
+    {% for perguntas in perguntas %}
+        <a href="/forum/testeview/?id={{ perguntas.id }}">{{ perguntas.resposta }}</a><br>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

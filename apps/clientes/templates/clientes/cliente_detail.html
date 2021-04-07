@@ -4,7 +4,16 @@
 {% block title %} Detalhes do cliente {% endblock %}
 
 {% block main %}
-
-    <h1>{{ object.nome }}</h1>
+    <br><br>
+    <h4>Nome do cliente: {{ object.nome }}</h4>
+    <h4>Administradora: {{ object.adm }}</h4>
+    <hr><hr><hr>
+    <h5>CFTV: {{ object.adm }}</h5>
+    <h5>SAI: {{ object.adm }}</h5>
+    <h5>SCA: {{ object.adm }}</h5>
+    <h5>SAP: {{ object.adm }}</h5>
+    <h5>SDAI: {{ object.adm }}</h5>
+    <hr><hr>
+    <h6>Cidade: {{ object.cidade }} - {{ object.cidade.uf }}</h6>
 
 {% endblock %}
