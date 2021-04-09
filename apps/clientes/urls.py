@@ -13,7 +13,9 @@ urlpatterns = [
     path('delete/<int:pk>/', ClienteDelete.as_view(), name='delete_cliente'),
     path('details/<int:pk>', ClienteDetailView.as_view(), name='details_cliente'),
 
+
     path('equipamentos/', Equipamentos),
-    path('equipamentos/equipamentos-detalhes/', EquipamentosDetalhes),
+
+    path('equipamento-detalhes/<int:pk>', EquipamentosDetalhes.as_view(), name='equipamento-detalhes'),
 
 ]

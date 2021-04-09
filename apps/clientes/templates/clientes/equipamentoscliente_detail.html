@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalhes dos equipamentos {% endblock %}
+
+{% block main %}
+
+    Nome do equipamento: {{ object.equipamentoNome }}<br>
+    Sistema: {{ object.equipamentoSistema }}<br>
+    Login: {{ object.equipamentoLogin }}<br>
+    Senha: {{ object.equipamentoPassword }}<br>
+    Localização: {{ object.equipamentoLocalizacao }}<br>
+
+
+
+    <hr>
+    <hr>
+    Texto: {{ object.equipamentoTexto }}<br>
+
+{% endblock %}

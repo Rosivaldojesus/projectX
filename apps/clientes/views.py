@@ -55,9 +55,9 @@ def Equipamentos(request):
         )
     return render(request, 'equipamentos.html', dados)
 
-def EquipamentosDetalhes(request):
-    detalhe = request.GET.get('id')
-    dados = {}
-    if detalhe:
-        dados['detalhe'] = EquipamentosCliente.objects.filter(id=detalhe)
-    return render(request, 'equipamentos-detalhes.html', dados)
+
+
+class EquipamentosDetalhes(DetailView):
+    model = EquipamentosCliente
+
+
