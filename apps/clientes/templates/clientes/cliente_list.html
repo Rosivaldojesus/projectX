@@ -6,7 +6,12 @@
 
 {% block main %}
 <div class="container">
-    <div><br><br>
+    <!--
+    ____________________________________________________________________________
+     Texto sobre o cliente
+    ____________________________________________________________________________
+      -->
+    <div><br>
         <h3>
           CLIENTES
         </h3>
@@ -16,23 +21,27 @@
           de urgência das demanda, bem como o ser o apoio técnico nas 
           demandas necessárias e tomadas de decisão.
         </p>
-    </div><br>
-
-
+    </div>
+    <!--
+    ____________________________________________________________________________
+    Botão adicionar clienete
+    ____________________________________________________________________________
+    -->
     </div>
         <a href="/clientes/criar" class="btn btn-primary">Adicionar Cliente</a>
     <div>
-
-
+    <!-- Tabela com os nomes dos clientes -->
     <div class="table-responsive">
         <table class="table table-hover">
-
           <thead class="table-dark">
             <tr>
               <th scope="col">Cliente</th>
                 <th scope="col">Cidade</th>
                 <th scope="col">UF</th>
-              <th scope="col">Opções</th>
+                <th scope="col">Visualizar</th>
+                <th scope="col">Equipamentos</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
             </tr>
           </thead>
           <tbody>
@@ -41,14 +50,26 @@
               <th scope="row">{{ cliente }}</th>
                 <th scope="row">{{ cliente.cidade }}</th>
                 <th scope="row">{{ cliente.cidade.uf }}</th>
-         
-              <td>
-                <a href="{% url 'details_cliente' cliente.id%}" class="btn btn-info">View</a>
-                <a href="{% url 'details_cliente' cliente.id%}" class="btn btn-secondary">Equipamentos</a>
-                <a href="{% url 'update_cliente' cliente.id %}" class="btn btn-warning">Editar</a>
-                <a href="{% url 'delete_cliente' cliente.id %}" class="btn btn-danger">Deletar</a>
-                  
-              </td>
+              <th>
+                <a href="{% url 'details_cliente' cliente.id%}">
+                    <i class="fas fa-eye text-lg-info" style='font-size:30px'></i>
+                </a>&nbsp;&nbsp;
+              </th>
+              <th>
+                <a href="equipamentos/?id={{ cliente.id }}">
+                    <i class="fas fa-microchip text-secondary" style='font-size:30px'></i>
+                </a>&nbsp;&nbsp;
+              </th>
+              <th>
+                <a href="{% url 'update_cliente' cliente.id %}">
+                    <i class="fas fa-user-edit text-warning" style='font-size:30px'></i>
+                </a>&nbsp;&nbsp;
+              </th>
+              <th>
+                <a href="{% url 'delete_cliente' cliente.id %}">
+                    <i class="fas fa-trash-alt text-danger" style='font-size:30px'></i>
+                </a>
+              </th>
             </tr>
             {% endfor %}
           </tbody>

@@ -1,6 +1,6 @@
-from django.db import models
 from django.urls import reverse
 from ..componentes.models import *
+
 
 # Create your models here.
 class Cliente(models.Model):
@@ -13,7 +13,6 @@ class Cliente(models.Model):
     fabricanteSDAI = models.ForeignKey(FabricanteSDAI, on_delete=models.CASCADE, blank=True, null=True)
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE, blank=True, null=True)
 
-
     def get_absolute_url(self):
         return reverse('list_cliente')
 
@@ -21,3 +20,17 @@ class Cliente(models.Model):
         return self.nome
 
 
+class EquipamentosCliente(models.Model):
+    equipamentoNome = models.CharField(max_length=100, blank=True, null=True)
+    equipamentoLogin = models.CharField(max_length=100, blank=True, null=True)
+    equipamentoPassword = models.CharField(max_length=100, blank=True, null=True)
+    equipamentoLocalizacao = models.CharField(max_length=255, blank=True, null=True)
+    equipamentoTexto = models.CharField(max_length=255, blank=True, null=True)
+    equipamentoSistema = models.ForeignKey(TiposDeSistemas, on_delete=models.CASCADE)
+    equipamentoCliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Equipamentos cliente'
+
+    def __str__(self):
+        return "{}".format(self.equipamentoNome)

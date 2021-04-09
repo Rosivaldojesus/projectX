@@ -16,7 +16,7 @@
                     Título da página
                     -----------------------------------------------------------
                   -->
-                    <h2>Documentação dos Sistemas</h2>
+                    <h3>Documentação dos Sistemas</h3>
                     <p>Tudo o que você precisa saber sobre Sistemas de Automação Predial.</p>
                     <hr>
                     <hr>
@@ -25,10 +25,26 @@
                       CFTV - Circuito Fechado de TV
                       -----------------------------------------------------------
                   -->
-                    <h4>CFTV - Circuito Fechado de TV</h4>
+                    <h5>Circuito Fechado de TV</h5>
+                    <p>
+                        É um sistema de captação e retenção de imagens feita por câmeras digitais ou
+                        analógicas e que permite a vídeo-vigilância através de monitores conectados
+                        à uma rede central. Essa tecnologia é utilizada para fins de vigilância e
+                        segurança em residências e empresas.
+                    </p>
+
                     {% for cftv in cftv %}
-                            <h6>{{ cftv.tituloDocumentacao }}</h6>
-                            <p>{{ cftv.textoDocumentacao }}</p>
+                            <a href="documentationView/?id={{ cftv.id }}">
+                                <p>
+                                    <strong>{{ cftv.tituloDocumentacao }}:</strong>
+                                    {{ cftv.textoDocumentacao }}
+
+
+                                    <a href="{% url 'update_documentation' cftv.id %}"> &nbsp;&nbsp;
+                                      <i  class="fas fa-edit text-success" ></i>
+                                    </a>
+                                </p>
+                            </a>
                         {% endfor %}
                     <hr>
                     <hr>
@@ -37,10 +53,24 @@
                       Sistema de Alarme de Intrusão
                       -----------------------------------------------------------
                   -->
-                    <h4>Sistema de Alarme de Intrusão</h4>
+                    <h5>Sistema de Alarme de Intrusão</h5>
+                    <p>
+                      A função de um sistema de detecção de intrusão é alertar o proprietário e, principalmente,
+                       a central de monitoramento sobre qualquer violação de um ambiente protegido, seja
+                        residencial ou corporativo. Cabe à equipe operacional posicionada na empresa
+                         de monitoramento confirmar a veracidade da ocorrência e tomar as providências
+                          necessárias e acordadas com o cliente. 
+
+                    </p>
                     {% for sai in sai %}
-                            <h6>{{ sai.tituloDocumentacao }}</h6>
-                            <p>{{ sai.textoDocumentacao }}</p>
+                            <a href="documentationView/?id={{ sai.id }}">
+                                <strong>{{ sai.tituloDocumentacao }}:</strong>
+                                        {{ sai.textoDocumentacao }}
+                            </a>
+
+                            <a href="{% url 'update_documentation' sai.id %}"> &nbsp;&nbsp;
+                              <i  class="fas fa-edit text-success" ></i>
+                            </a>
                         {% endfor %}
 
                     <hr>
@@ -50,11 +80,22 @@
                       Sistema de Automação
                       -----------------------------------------------------------
                   -->
-                    <h4>Sistema de Automação</h4>
-                    <br>
+                    <h5>Sistema de Automação</h5>
+                    <p>
+                      Automação é um sistema automático pelo qual os mecanismos verificam seu próprio funcionamento,
+                       efetuando medições e introduzindo correções, sem a necessidade da interferência do homem.
+                        Em seu uso moderno, a automação pode ser definida como uma tecnologia que utiliza comandos
+                         programados para operar um dado processo, combinados com retroação de informação para 
+                         determinar que os comandos sejam executados corretamente.
+                    </p>
                     {% for sap in sap %}
-                            <h6>{{ sap.tituloDocumentacao }}</h6>
-                            <p>{{ sap.textoDocumentacao }}</p>
+                            <a href="documentationView/?id={{ sap.id }}">
+                                <strong>{{ sap.tituloDocumentacao }}: </strong>
+                                        {{ sap.textoDocumentacao }}
+                            </a>
+                            <a href="{% url 'update_documentation' sap.id %}"> &nbsp;&nbsp;
+                              <i  class="fas fa-edit text-success" ></i>
+                            </a>
                         {% endfor %}
 
                     <hr>
@@ -64,12 +105,21 @@
                       Sistema de Controle de Acesso
                       -----------------------------------------------------------
                   -->
-                    <h4>Sistema de Controle de Acesso</h4>
+                    <h5>Sistema de Controle de Acesso</h5>
+                    <p>
+                      Um sistema de controle de acesso seguro é aquele que é criptografado de ponta a ponta,
+                       o que se consegue, em primeiro lugar, com uma tecnologia de identificação
+                        (biométrica ou de cartão) que garanta que não seja duplicável ou se possa clonar.
+                    </p>
                     {% for sca in sca %}
-                            <H66>{{ sca.tituloDocumentacao }}</H66>
-                            <p>{{ sca.textoDocumentacao }}</p>
+                            <a href="documentationView/?id={{ sca.id }}">
+                                <strong>{{ sca.tituloDocumentacao }}:</strong>
+                                    {{ sca.textoDocumentacao }}
+                            </a>
+                            <a href="{% url 'update_documentation' sca.id %}"> &nbsp;&nbsp;
+                              <i  class="fas fa-edit text-success" ></i>
+                            </a>  
                         {% endfor %}
-
                     <hr>
                     <hr>
                   <!--
@@ -77,10 +127,20 @@
                       Sistema de Alarme de Incêndio
                       -----------------------------------------------------------
                   -->
-                    <h4>Sistema de Alarme de Incêndio</h4>
+                    <h5>Sistema de Alarme de Incêndio</h5>
+                    <p>
+                      A central de alarme de incêndio é o equipamento responsável por receber o sinal emitido
+                       pelos detectores de fumaça e, então, acionar sirenes de alerta, sinalizando a necessidade 
+                       de evacuação da edificação em caso de incêndio.
+                    </p>
                         {% for sdai in sdai %}
-                            <h6>{{ sdai.tituloDocumentacao }}</h6>
-                            <p>{{ sdai.textoDocumentacao }}</p>
+                            <a href="documentationView/?id={{ sdai.id }}">
+                                <strong>{{ sdai.tituloDocumentacao }}:</strong>
+                                        {{ sdai.textoDocumentacao }}
+                            </a>
+                            <a href="{% url 'update_documentation' sdai.id %}"> &nbsp;&nbsp;
+                              <i  class="fas fa-edit text-success" ></i>
+                            </a>
                         {% endfor %}
                     <hr>
                     <hr>

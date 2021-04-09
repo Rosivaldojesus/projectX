@@ -1,12 +1,13 @@
-
-from django.urls import reverse, reverse_lazy
+from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Cliente
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from .models import Cliente, EquipamentosCliente
 
 
 # Create your views here.
+
 class ClienteCreate(CreateView):
     model = Cliente
     fields = ['nome',
@@ -23,6 +24,7 @@ class ClienteCreate(CreateView):
 class ClienteList(ListView):
     model = Cliente
 
+
 class ClienteDetailView(DetailView):
     model = Cliente
 
@@ -38,10 +40,24 @@ class ClienteEdit(UpdateView):
               'fabricanteSDAI',
               'cidade']
 
+
 class ClienteDelete(DeleteView):
     model = Cliente
-
     success_url = reverse_lazy('list_cliente')
 
 
+def Equipamentos(request):
+    equipamento = request.GET.get('id')
+    dados = {}
+    if equipamento:
+        dados['equipamento'] = EquipamentosCliente.objects.filter(
+            equipamentoCliente=equipamento
+        )
+    return render(request, 'equipamentos.html', dados)
 
+def EquipamentosDetalhes(request):
+    detalhe = request.GET.get('id')
+    dados = {}
+    if detalhe:
+        dados['detalhe'] = EquipamentosCliente.objects.filter(id=detalhe)
+    return render(request, 'equipamentos-detalhes.html', dados)

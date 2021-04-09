@@ -1,17 +1,15 @@
-from django.http import request
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
-from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from .models import PerguntaForum, RespostaForum
-from django.views.generic.detail import DetailView
+
 
 # Create your views here.
+
+
 def ForumList(request):
     pergunta = PerguntaForum.objects.all()
     respostasPerguntas = RespostaForum.objects.filter().count()
-    return render(request, 'forum/perguntaforum_list.html',  {'pergunta':pergunta,
+    return render(request, 'forum/perguntaforum_list.html', {'pergunta':pergunta,
                                                               'respostasPerguntas':respostasPerguntas
 
                                                               })

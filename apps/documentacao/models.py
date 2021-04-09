@@ -1,6 +1,7 @@
 from django.db import models
 from ..componentes.models import TiposDeSistemas
 
+
 # Create your models here.
 
 class Documentacao(models.Model):
