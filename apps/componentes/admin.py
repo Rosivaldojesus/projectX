@@ -12,3 +12,6 @@ admin.site.register(FabricanteSAP)
 admin.site.register(FabricanteSDAI)
 
 admin.site.register(TiposDeSistemas)
+admin.site.register(ManuaisFabricante)
+admin.site.register(ManuaisPreventiva)
+admin.site.register(SenhasPadrao)

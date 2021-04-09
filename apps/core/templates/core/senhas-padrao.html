@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Senhas Padrões dos fabricantes {% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="table-dark">
+                <th>Equipamento</th>
+                <th>Sistema</th>
+                <th>Login</th>
+                <th>Senha</th>
+                <th>Baixar</th>
+            </thead>
+            <tbody>
+            {% for senha in senha %}
+                <tr>
+                    <td>{{ senha.senhaEquipamento }}</td>
+                    <td>{{ senha.senhaFabricante }}</td>
+                    <td>{{ senha.senhaLogin }}</td>
+                    <td>{{ senha.senhaPassword }}</td>
+                    <td>Link</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -87,3 +87,47 @@ class TiposDeSistemas(models.Model):
 
     def __str__(self):
         return "{}".format(self.tiposSistemas)
+
+#--------------------------------------------------------------------
+#------------------    Manuais Fabricantes    -----------------------
+#--------------------------------------------------------------------
+class ManuaisFabricante(models.Model):
+    fabricanteNome = models.CharField(max_length=255, blank=True, null=True)
+    fabricanteSistema = models.ForeignKey(TiposDeSistemas, on_delete=models.CASCADE)
+    fabricanteLink = models.CharField(max_length=255, blank=True, null=True)
+    fabricanteDescricao = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Manuais de Fabricanate'
+
+    def __str__(self):
+        return "{}".format(self.fabricanteNome)
+
+#--------------------------------------------------------------------
+#------------------    Manuais Preventiva    -----------------------
+#--------------------------------------------------------------------
+class ManuaisPreventiva(models.Model):
+    preventivaEquipamento = models.CharField(max_length=255, blank=True, null=True)
+    preventivaSistema = models.ForeignKey(TiposDeSistemas, on_delete=models.CASCADE)
+    preventivaProcedimentos = models.CharField(max_length=255, blank=True, null=True)
+    preventivaTempo = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Manuais de Preventivas'
+
+    def __str__(self):
+        return "{}".format(self.preventivaEquipamento)
+#--------------------------------------------------------------------
+#------------------    Manuais Preventiva    -----------------------
+#--------------------------------------------------------------------
+class SenhasPadrao(models.Model):
+    senhaEquipamento = models.CharField(max_length=255, blank=True, null=True)
+    senhaFabricante = models.ForeignKey(TiposDeSistemas, on_delete=models.CASCADE)
+    senhaLogin = models.CharField(max_length=50, blank=True, null=True)
+    senhaPassword = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = ' Senhas Padrão'
+
+    def __str__(self):
+        return "{}".format(self.senhaEquipamento)

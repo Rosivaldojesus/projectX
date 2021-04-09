@@ -3,6 +3,8 @@ from ..componentes.models import *
 
 
 # Create your models here.
+# Models dos clientes, onde consta as informações relevantes de
+#cada cliente
 class Cliente(models.Model):
     nome = models.CharField(max_length=200)
     adm = models.ForeignKey(Administradora, on_delete=models.CASCADE, blank=True, null=True)
@@ -20,8 +22,13 @@ class Cliente(models.Model):
         return self.nome
 
 
+#Models para os equipamentos relacionados nos respectivos clientes
 class EquipamentosCliente(models.Model):
-    equipamentoNome = models.CharField(max_length=100, blank=True, null=True)
+    equipamentoNome = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True
+    )
     equipamentoLogin = models.CharField(max_length=100, blank=True, null=True)
     equipamentoPassword = models.CharField(max_length=100, blank=True, null=True)
     equipamentoLocalizacao = models.CharField(max_length=255, blank=True, null=True)

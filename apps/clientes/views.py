@@ -53,7 +53,7 @@ def Equipamentos(request):
         dados['equipamento'] = EquipamentosCliente.objects.filter(
             equipamentoCliente=equipamento
         )
-    return render(request, 'equipamentos.html', dados)
+    return render(request, 'clientes/equipamentos.html', dados)
 
 
 

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} :: Manuais {% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="table-dark">
+                <th>Fabricante</th>
+                <th>Sistema</th>
+                <th>Descrição</th>
+                <th>Link</th>
+            </thead>
+            <tbody>
+            {% for manual in manual %}
+                <tr>
+                    <td>{{ manual.fabricanteNome }}</td>
+                    <td>{{ manual.fabricanteSistema }}</td>
+                    <td>{{ manual.fabricanteDescricao }}</td>
+                    <td>{{ manual.fabricanteLink }}</td>
+                    <td>Link</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
