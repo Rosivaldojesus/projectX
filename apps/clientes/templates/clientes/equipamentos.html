@@ -1,42 +1,44 @@
+<!-- Extendendo os arquivos de base -->
 {% extends 'base.html' %}
+
+<!-- Carregar os arquivos estáticos -->
 {% load static %}
 
+<!-- Bloco contendo o  título da página -->
 {% block title %} :: Equipamentos {% endblock %}
 
+<!-- Bloco principal -->
 {% block main %}
-
- <div class="">
-     <table class="table">
-         <thead class="table-dark">
-            <tr>
-                <th>Blá</th>
-                <th>Blá</th>
-                <th>Blá</th>
-                <th>Blá</th>
-                <th>Blá</th>
-                <th>Blá</th>
-                <th>Bl</th>
-            </tr>
-         </thead>
-         <tbody>
-            {% for equip in equipamento %}
-            <tr>
-                <td>{{ equip.equipamentoNome }}</td>
-                <td>{{ equip.equipamentoLogin }}</td>
-                <td>{{ equip.equipamentoPassword }}</td>
-                <td>{{ equip.equipamentoLocalizacao }}</td>
-                <td>{{ equip.equipamentoTexto }}</td>
-                <td>{{ equip.equipamentoSistema }}</td>
-                <td>
-                    <a href="{% url 'equipamento-detalhes' equip.id %}">
-                        <i class="fas fa-eye text-lg-info" style='font-size:30px'></i>
-                    </a>
-                </td>
-            </tr>
-            {% endfor %}
-         </tbody>
-     </table>
-
- </div>
-
+     <div class="">
+         <table class="table">
+             <thead class="table-dark">
+                <tr>
+                    <th>Blá</th>
+                    <th>Blá</th>
+                    <th>Blá</th>
+                    <th>Blá</th>
+                    <th>Blá</th>
+                    <th>Blá</th>
+                    <th>Bl</th>
+                </tr>
+             </thead>
+             <tbody>
+                {% for equip in equipamento %}
+                <tr>
+                    <td>{{ equip.equipamentoNome }}</td>
+                    <td>{{ equip.equipamentoLogin }}</td>
+                    <td>{{ equip.equipamentoPassword }}</td>
+                    <td>{{ equip.equipamentoLocalizacao }}</td>
+                    <td>{{ equip.equipamentoTexto }}</td>
+                    <td>{{ equip.equipamentoSistema }}</td>
+                    <td>
+                        <a href="{% url 'equipamento-detalhes' equip.id %}">
+                            <i class="fas fa-eye text-lg-info" style='font-size:30px'></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+             </tbody>
+         </table>
+     </div>
 {% endblock %}

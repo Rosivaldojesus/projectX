@@ -4,41 +4,22 @@ from .models import PerguntaForum, RespostaForum
 
 
 # Create your views here.
-
-
-def ForumList(request):
+def Forum(request):
     pergunta = PerguntaForum.objects.all()
-    respostasPerguntas = RespostaForum.objects.filter().count()
-    return render(request, 'forum/perguntaforum_list.html', {'pergunta':pergunta,
-                                                              'respostasPerguntas':respostasPerguntas
-
-                                                              })
+    return render(request, 'forum/forum.html', {'pergunta': pergunta})
 
 
-def ForumListDetails(request):
-    pergunta = request.GET.get('id')
-    if pergunta:
-        pergunta = PerguntaForum.objects.get(id=pergunta)
-    resposta = RespostaForum.objects.filter(resposta_pergunta=pergunta)
-    respostasPerguntas = RespostaForum.objects.filter(resposta_pergunta=pergunta).count()
-    return render(request, 'forum/perguntaforum_detail.html',{'resposta':resposta,
-                                                              'pergunta':pergunta,
-                                                              'respostasPerguntas':respostasPerguntas,
-
-                                                              })
-
-
-
-def ForumView(request):
-    pergunta = request.GET.get('id')
-    dados = {}
-    if pergunta:
-        dados['pergunta'] = RespostaForum.objects.get(id=pergunta)
-    return render(request, 'forum/testeview.html', dados)
-
-
-
-class ForumCreate(CreateView):
+class ForumPergunta(CreateView):
     model = PerguntaForum
     fields = ['titulo_pergunta','pergunta_forum']
     success_url = '/forum/'
+
+
+def ForumPerguntaRespostas(request):
+    pergunta = request.GET.get('id')
+    if pergunta:
+        pergunta = PerguntaForum.objects.get(id=pergunta)
+    respostas = RespostaForum.objects.filter(resposta_pergunta=pergunta)
+    return render(request, 'forum/perguntas-respostas.html', {'pergunta': pergunta,
+                                                              'respostas': respostas,
+                                                              })

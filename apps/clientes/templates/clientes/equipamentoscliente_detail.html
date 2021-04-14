@@ -1,8 +1,13 @@
+<!-- Extendendo os arquivos de base -->
 {% extends 'base.html' %}
+
+<!-- Carregar os arquivos estáticos -->
 {% load static %}
 
+<!-- Bloco contendo o  título da página -->
 {% block title %} :: Detalhes dos equipamentos {% endblock %}
 
+<!-- Bloco principal -->
 {% block main %}
 
     Nome do equipamento: {{ object.equipamentoNome }}<br>
@@ -10,8 +15,6 @@
     Login: {{ object.equipamentoLogin }}<br>
     Senha: {{ object.equipamentoPassword }}<br>
     Localização: {{ object.equipamentoLocalizacao }}<br>
-
-
 
     <hr>
     <hr>

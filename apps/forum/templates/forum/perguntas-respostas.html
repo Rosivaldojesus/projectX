@@ -1,18 +1,29 @@
 <!-- Extendendo os arquivos de base -->
 {% extends 'base.html' %}
+
 <!-- Carregar os arquivos estáticos -->
 {% load static %}
+
 <!-- A biblioteca do crispy forms -->
 {% load crispy_forms_tags %}
 
 <!-- Bloco contendo o  título da página -->
 {% block title %} :: Fórum {% endblock %}
 
-
 <!-- Bloco principal -->
-{% block main%}
-    <form method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Save">
-    </form>
+{% block main %}
+    <div>
+        <h3>{{ pergunta.titulo_pergunta }}</h3>
+        <a>{{ pergunta.pergunta_forum }}</a>
+    </div>
+
+    <h2>Resposta</h2>
+
+    <div>
+    {% for respostas in respostas %}
+        <h6>{{ respostas }}</h6>
+        <a href="#">Comentar</a>
+        <hr>
+    {% endfor %}
+    </div>
 {% endblock %}

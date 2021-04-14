@@ -1,0 +1,28 @@
+<!-- Extendendo os arquivos de base -->
+{% extends 'base.html' %}
+
+<!-- Carregar os arquivos estáticos -->
+{% load static %}
+
+<!-- Bloco contendo o  título da página -->
+{% block title %}:: Fórum {% endblock %}
+
+<!-- Bloco principal -->
+{% block main %}
+    <h3><strong>Explore as nossas perguntas!</strong></h3><br>
+
+    <div align="right">
+        <a href="criar" class="btn btn-primary">
+            Faça uma pergunta
+        </a>
+    </div>
+    <div>
+    {% for pergunta in pergunta %}
+        <h5>
+            <a href="perguntas-respostas/?id= {{ pergunta.id }}">
+                {{ pergunta.titulo_pergunta }}
+            </a>
+        </h5><hr>
+    {% endfor %}
+    </div>
+{% endblock %}

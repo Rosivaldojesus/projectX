@@ -1,20 +1,24 @@
+<!-- Extendendo os arquivos de base -->
 {% extends 'base.html' %}
+
+<!-- Carregar os arquivos estáticos -->
 {% load static %}
+
+<!-- Bloco contendo a biblioteca Crispy Forms-->
 {% load crispy_forms_tags %}
+<!-- Bloco principal -->
+{% block main %}
+    <form method="post">{% csrf_token %}
+        <div align="center">
+            <i class="fas fa-exclamation-triangle" style="color:#dd3447;font-size:60px;"></i>
 
-    {% block main %}
-        <form method="post">{% csrf_token %}
-             <div align="center">
-
-                 <i class="fas fa-exclamation-triangle" style="color:#dd3447;font-size:60px;"></i>
-
-                <h2>Deseja excluir cadastro permanentemente?</h2>
-            </div>
-
-                {{ form  }}
-
+            <h2>Deseja excluir cadastro permanentemente?</h2>
+        </div>
+        <div>
+            {{ form  }}
             <div align="center">
                 <button type="submit" class="btn btn-danger"> Comfirmar</button>
             </div>
-        </form>
-    {% endblock %}
+        </div>
+    </form>
+{% endblock %}

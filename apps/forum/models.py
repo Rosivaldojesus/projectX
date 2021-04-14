@@ -12,7 +12,7 @@ class PerguntaForum(models.Model):
         verbose_name_plural = 'Pergunta Fórum'
 
     def __str__(self):
-        return self.pergunta_forum
+        return "{}".format(self.titulo_pergunta)
 
 
 class RespostaForum(models.Model):
@@ -23,4 +23,16 @@ class RespostaForum(models.Model):
         verbose_name_plural = 'Resposta Fórum'
 
     def __str__(self):
-        return self.resposta
+        return "{}".format(self.resposta)
+
+class ComentariosRespostaForum(models.Model):
+    comentario = models.CharField(max_length=255, blank=True, null=True)
+    respostaForum = models.ForeignKey(RespostaForum, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Comentário Resposta'
+
+    def __str__(self):
+        return "{}".format(self.comentario)
+
+

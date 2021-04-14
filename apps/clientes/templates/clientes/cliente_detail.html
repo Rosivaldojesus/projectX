@@ -1,8 +1,13 @@
+<!-- Extendendo os arquivos de base -->
 {% extends 'base.html' %}
+
+<!-- Carregar os arquivos estáticos -->
 {% load static %}
 
+<!-- Bloco contendo o  título da página -->
 {% block title %} {{ object.nome }} {% endblock %}
 
+<!-- Bloco principal -->
 {% block main %}
     <br><br>
     <h4>Nome do cliente: {{ object.nome }}</h4>
@@ -15,5 +20,4 @@
     <h5>SDAI: {{ object.adm }}</h5>
     <hr><hr>
     <h6>Cidade: {{ object.cidade }} - {{ object.cidade.uf }}</h6>
-
 {% endblock %}
