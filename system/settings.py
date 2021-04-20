@@ -27,12 +27,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'crispy_forms',
     'apps.componentes',
     'apps.clientes',
     'apps.core',
     'apps.forum',
     'apps.documentacao',
+    'apps.blog'
 
 ]
 
@@ -119,8 +121,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+INSTALLED_APPS += ('django_summernote', )
 
 

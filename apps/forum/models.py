@@ -25,12 +25,13 @@ class RespostaForum(models.Model):
     def __str__(self):
         return "{}".format(self.resposta)
 
+
 class ComentariosRespostaForum(models.Model):
     comentario = models.CharField(max_length=255, blank=True, null=True)
     respostaForum = models.ForeignKey(RespostaForum, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name_plural = 'Comentário Resposta'
+        verbose_name_plural = 'Comentário Respostas'
 
     def __str__(self):
         return "{}".format(self.comentario)

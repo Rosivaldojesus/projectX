@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}:: Blog {% endblock %}
+
+{% block main %}
+<div class="container">
+    {% for post in posts %}
+
+<div class="card-columns">
+     <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.titulo_post}}</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"><small class="text-muted">{{ post.data_post| naturaltime }}
+              |
+              {{ qs1 }} Comentários
+              |
+              categoria
+
+          </small></p>
+        </div>
+      </div>
+</div>
+
+
+
+
+</div>
+    {% endfor %}
+</div>
+{% endblock %}
