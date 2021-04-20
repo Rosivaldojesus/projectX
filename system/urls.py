@@ -12,7 +12,6 @@ urlpatterns = [
     path('documentacao/', include('apps.documentacao.urls')),
     path('blog/', include('apps.blog.urls')),
 
-    path('summernote/', include('django_summernote.urls')),
 ]
 
 
