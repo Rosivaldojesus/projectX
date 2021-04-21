@@ -10,7 +10,7 @@ from django.db.models import Q, Count, Case, When
 
 class PostIndex(ListView):
     model = Post
-    template_name = 'blog/indexx.html'
+    template_name = 'blog/index.html'
     context_object_name = 'posts'
 
     def get_queryset_data(self):

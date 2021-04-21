@@ -4,7 +4,7 @@ from ..componentes.models import SenhasPadrao, ManuaisFabricante
 
 # Create your views here.
 def home(request):
-    return render(request, 'core/indexx.html')
+    return render(request, 'core/index.html')
 
 def Senha(request):
     senha = SenhasPadrao.objects.all()
